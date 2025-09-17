@@ -47,6 +47,9 @@ func (e *Event) Err(err error) *Event {
 	if e == nil {
 		return nil
 	}
+	if err == nil {
+		return e
+	}
 	e.fields["error"] = err.Error()
 	return e
 }

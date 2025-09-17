@@ -24,7 +24,7 @@ func setupLogger() (*pdalog.Logger, *bytes.Buffer) {
 // parseLogEntry parses the JSON log entry from the buffer
 func parseLogEntry(buf *bytes.Buffer) map[string]interface{} {
 	var entry map[string]interface{}
-	json.Unmarshal(buf.Bytes(), &entry)
+	_ = json.Unmarshal(buf.Bytes(), &entry)
 	return entry
 }
 
